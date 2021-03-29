@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
 
     public CharacterController2D controller;
     public float moveSpeed = 40f;
+    public int playerNumber;
 
     private float movement;
     private bool jump;
@@ -14,8 +15,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement = Input.GetAxis("Horizontal") * moveSpeed;
-        if (Input.GetButtonDown("Jump"))
+        movement = Input.GetAxis("Horizontal" + playerNumber) * moveSpeed;
+        if (Input.GetButtonDown("Jump" + playerNumber))
         {
             jump = true;
         }
