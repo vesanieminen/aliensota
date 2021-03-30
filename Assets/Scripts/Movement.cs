@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
 
     public CharacterController2D controller;
+    public Animator animator;
     public float moveSpeed = 40f;
     public int playerNumber;
 
@@ -16,9 +17,11 @@ public class Movement : MonoBehaviour
     void Update()
     {
         movement = Input.GetAxis("Horizontal" + playerNumber) * moveSpeed;
+        animator.SetFloat("Nopeus", Mathf.Abs(movement));
         if (Input.GetButtonDown("Jump" + playerNumber))
         {
             jump = true;
+            animator.SetBool("Hypp‰‰", true);
         }
     }
 
@@ -26,6 +29,11 @@ public class Movement : MonoBehaviour
     {
         controller.Move(movement * Time.fixedDeltaTime, false, jump);
         jump = false;
+    }
+
+    public void OnLand()
+    {
+        animator.SetBool("Hypp‰‰", false);
     }
 
 }
