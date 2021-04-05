@@ -28,6 +28,12 @@ public class Movement : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<Vector2>().x * moveSpeed;
+        Debug.Log("Move value: " + movement);
+    }
+
+    public void OnMove2(InputValue value)
+    {
+        Debug.Log(value);
     }
 
     public void OnJump(InputAction.CallbackContext context)

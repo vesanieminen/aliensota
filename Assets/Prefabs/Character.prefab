@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 0526387a9e2e83546a55b0e198f68453, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 3f1c51addfe2d3b409a5b027c9dd762d, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -333,27 +333,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 62cbe844-99e6-4bca-bcca-90f568636cf9
-    m_ActionName: Game/Move[/XInputControllerWindows/leftStick/left,/XInputControllerWindows1/leftStick/left]
+    m_ActionId: c0988a61-18c2-4385-af57-828159289e40
+    m_ActionName: Player/Movement[/XInputControllerWindows/leftStick/x]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3641509723851606020}
-        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
-        m_MethodName: OnJump
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 385453ba-a252-4ccc-9bb8-bacb454a25b4
-    m_ActionName: Game/Jump[/XInputControllerWindows/buttonSouth,/XInputControllerWindows1/buttonSouth]
+      m_Calls: []
+    m_ActionId: e82ce438-9de7-45eb-9416-1c74e8728fbf
+    m_ActionName: Player/Move[/Keyboard/leftArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Game
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 519420031}
 --- !u!1 &3641509722852229843
