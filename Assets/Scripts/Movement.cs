@@ -9,7 +9,8 @@ public class Movement : MonoBehaviour
     public CharacterController2D controller;
     public Animator animator;
     public float moveSpeed = 40f;
-    public int playerNumber;
+
+    [SerializeField] private Transform HitPosition;
 
     private float movement;
     private bool jump;
@@ -42,6 +43,13 @@ public class Movement : MonoBehaviour
         {
             punch = true;
             animator.SetTrigger("Punch");
+            RaycastHit2D hit = Physics2D.Raycast(HitPosition.position, - Vector2.left * transform.localScale.x, 0.5f);
+            if (hit.collider != null)
+            {
+                hit.collider.gameObject.SendMessage("Hit", transform.localScale.x);
+            }
+            
+
         }
     }
 
@@ -56,6 +64,11 @@ public class Movement : MonoBehaviour
     public void OnLand()
     {
         animator.SetBool("Jump", false);
+    }
+
+    public void Hit(float direction)
+    {
+        GetComponent<Rigidbody2D>().AddForce(-Vector2.left * direction * 1000 + Vector2.up * 250);
     }
 
 }
