@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -16,13 +17,19 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement = Input.GetAxis("Horizontal" + playerNumber) * moveSpeed;
-        animator.SetFloat("Nopeus", Mathf.Abs(movement));
-        if (Input.GetButtonDown("Jump" + playerNumber))
-        {
-            jump = true;
-            animator.SetBool("Hypp‰‰", true);
-        }
+ 
+    }
+
+    public void Move(InputAction.CallbackContext value)
+    {
+        movement = value.ReadValue<float>() * moveSpeed;
+        animator.SetFloat("Speed", Mathf.Abs(movement));
+    }
+
+    public void Jump(InputAction.CallbackContext value)
+    {
+        jump = true;
+        animator.SetBool("Jump", jump);
     }
 
     private void FixedUpdate()
@@ -33,7 +40,7 @@ public class Movement : MonoBehaviour
 
     public void OnLand()
     {
-        animator.SetBool("Hypp‰‰", false);
+        animator.SetBool("Jump", false);
     }
 
 }
