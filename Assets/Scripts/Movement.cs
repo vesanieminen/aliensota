@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
 
     private float movement;
     private bool jump;
+    private bool punch;
 
     // Update is called once per frame
     void Update()
@@ -34,11 +35,22 @@ public class Movement : MonoBehaviour
         }
     }
 
+    public void Punch(InputAction.CallbackContext value)
+    {
+        float inputValue = value.ReadValue<float>();
+        if (inputValue == 1 && !punch)
+        {
+            punch = true;
+            animator.SetTrigger("Punch");
+        }
+    }
+
     private void FixedUpdate()
     {
         controller.Move(movement * Time.fixedDeltaTime, false, jump);
         animator.SetFloat("Speed", Mathf.Abs(movement));
         jump = false;
+        punch = false;
     }
 
     public void OnLand()
