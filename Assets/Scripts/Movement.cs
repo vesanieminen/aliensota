@@ -23,18 +23,21 @@ public class Movement : MonoBehaviour
     public void Move(InputAction.CallbackContext value)
     {
         movement = value.ReadValue<float>() * moveSpeed;
-        animator.SetFloat("Speed", Mathf.Abs(movement));
     }
 
     public void Jump(InputAction.CallbackContext value)
     {
-        jump = true;
-        animator.SetBool("Jump", jump);
+        if (!jump)
+        {
+            jump = true;
+            animator.SetBool("Jump", jump);
+        }
     }
 
     private void FixedUpdate()
     {
         controller.Move(movement * Time.fixedDeltaTime, false, jump);
+        animator.SetFloat("Speed", Mathf.Abs(movement));
         jump = false;
     }
 
