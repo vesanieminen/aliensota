@@ -184,7 +184,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 4294967295
   m_GroundCheck: {fileID: 3641509723021171979}
   m_CeilingCheck: {fileID: 3641509722852229842}
   m_CrouchDisableCollider: {fileID: 0}
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 3641509723851606023}
   animator: {fileID: 1742333602}
-  moveSpeed: 30
+  moveSpeed: 100
   playerNumber: 1
 --- !u!50 &3641509723851606022
 Rigidbody2D:

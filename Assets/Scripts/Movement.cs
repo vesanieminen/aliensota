@@ -44,6 +44,7 @@ public class Movement : MonoBehaviour
     public void OnLand()
     {
         animator.SetBool("Jump", false);
+        Debug.Log("Landed!");
     }
 
 }
