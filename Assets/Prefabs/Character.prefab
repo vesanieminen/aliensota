@@ -222,6 +222,8 @@ MonoBehaviour:
   controller: {fileID: 3641509723851606023}
   animator: {fileID: 1742333602}
   moveSpeed: 75
+  hitBackForce: 2000
+  hitUpForce: 150
   HitPosition: {fileID: 2703832865923285908}
 --- !u!50 &3641509723851606022
 Rigidbody2D:

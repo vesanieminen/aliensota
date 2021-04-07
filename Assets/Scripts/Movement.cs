@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
     public CharacterController2D controller;
     public Animator animator;
     public float moveSpeed = 40f;
+    public float hitBackForce = 1000f;
+    public float hitUpForce = 250f;
 
     [SerializeField] private Transform HitPosition;
 
@@ -68,7 +70,7 @@ public class Movement : MonoBehaviour
 
     public void Hit(float direction)
     {
-        GetComponent<Rigidbody2D>().AddForce(-Vector2.left * direction * 1000 + Vector2.up * 250);
+        GetComponent<Rigidbody2D>().AddForce(-Vector2.left * direction * hitBackForce + Vector2.up * hitUpForce);
     }
 
 }
