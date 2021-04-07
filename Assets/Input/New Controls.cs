@@ -41,6 +41,14 @@ public class @NewControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Diggy"",
+                    ""type"": ""Button"",
+                    ""id"": ""6d615030-acaf-4401-a676-a33db8ac8a03"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -76,6 +84,17 @@ public class @NewControls : IInputActionCollection, IDisposable
                     ""action"": ""Punch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da9b01d8-c7f3-4fcb-9635-6daf14af6cc7"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Diggy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -87,6 +106,7 @@ public class @NewControls : IInputActionCollection, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Punch = m_Player.FindAction("Punch", throwIfNotFound: true);
+        m_Player_Diggy = m_Player.FindAction("Diggy", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -139,6 +159,7 @@ public class @NewControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Punch;
+    private readonly InputAction m_Player_Diggy;
     public struct PlayerActions
     {
         private @NewControls m_Wrapper;
@@ -146,6 +167,7 @@ public class @NewControls : IInputActionCollection, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Punch => m_Wrapper.m_Player_Punch;
+        public InputAction @Diggy => m_Wrapper.m_Player_Diggy;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -164,6 +186,9 @@ public class @NewControls : IInputActionCollection, IDisposable
                 @Punch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPunch;
                 @Punch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPunch;
                 @Punch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPunch;
+                @Diggy.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggy;
+                @Diggy.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggy;
+                @Diggy.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggy;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -177,6 +202,9 @@ public class @NewControls : IInputActionCollection, IDisposable
                 @Punch.started += instance.OnPunch;
                 @Punch.performed += instance.OnPunch;
                 @Punch.canceled += instance.OnPunch;
+                @Diggy.started += instance.OnDiggy;
+                @Diggy.performed += instance.OnDiggy;
+                @Diggy.canceled += instance.OnDiggy;
             }
         }
     }
@@ -186,5 +214,6 @@ public class @NewControls : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnPunch(InputAction.CallbackContext context);
+        void OnDiggy(InputAction.CallbackContext context);
     }
 }

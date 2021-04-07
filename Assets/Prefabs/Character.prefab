@@ -114,6 +114,7 @@ Transform:
   - {fileID: 3641509723021171979}
   - {fileID: 519420032}
   - {fileID: 2703832865923285908}
+  - {fileID: 1611716227835358224}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -230,6 +231,7 @@ MonoBehaviour:
   diggy1: {fileID: 8300000, guid: 6295a3b808d9b4fcc9daaa4c76b52a74, type: 3}
   diggy2: {fileID: 8300000, guid: 0d699f37a5d594b65916045e65c58bf2, type: 3}
   HitPosition: {fileID: 2703832865923285908}
+  HitPositionDown: {fileID: 1611716227835358224}
 --- !u!50 &3641509723851606022
 Rigidbody2D:
   serializedVersion: 4
@@ -385,6 +387,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6795b132-da99-4332-9506-4d1920f35f98
     m_ActionName: Player/Punch[/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3641509723851606020}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+        m_MethodName: Dig
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6d615030-acaf-4401-a676-a33db8ac8a03
+    m_ActionName: Player/Diggy[/XInputControllerWindows/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -486,6 +504,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1303824618003444759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1611716227835358224}
+  m_Layer: 3
+  m_Name: HitPosition down
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1611716227835358224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303824618003444759}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.023, y: -0.375, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7256804892310673281}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3641509722852229843
 GameObject:
   m_ObjectHideFlags: 0
