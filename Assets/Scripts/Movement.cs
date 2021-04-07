@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
     public float hitUpForce = 250f;
     public AudioClip punchClip;
     public AudioClip swooshClip;
+    public AudioClip diggy1;
+    public AudioClip diggy2;
 
     [SerializeField] private Transform HitPosition;
 
@@ -38,6 +40,12 @@ public class Movement : MonoBehaviour
         audioSource.PlayOneShot(swooshClip);
 
     }
+
+    void PlayDiggy()
+    {
+        audioSource.PlayOneShot(Random.value > 0.5f ? diggy1 : diggy2);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -79,7 +87,7 @@ public class Movement : MonoBehaviour
                 if (tile != null)
                 {
                     tile.Hit(new Vector2(hit.point.x - 0.01f * hit.normal.x, hit.point.y - 0.01f * hit.normal.y));
-                    Debug.Log("hit! ");
+                    PlayDiggy();
                 }
             }        
         }
