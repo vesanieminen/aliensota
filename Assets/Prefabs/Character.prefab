@@ -226,6 +226,7 @@ MonoBehaviour:
   hitBackForce: 2000
   hitUpForce: 150
   punchClip: {fileID: 8300000, guid: 53d714ebe3f834d45a5ce462de3202db, type: 3}
+  swooshClip: {fileID: 8300000, guid: ee9de43777d184a9b9281a78a68ece6b, type: 3}
   HitPosition: {fileID: 2703832865923285908}
 --- !u!50 &3641509723851606022
 Rigidbody2D:

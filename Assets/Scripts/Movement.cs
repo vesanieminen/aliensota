@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     public float hitBackForce = 1000f;
     public float hitUpForce = 250f;
     public AudioClip punchClip;
+    public AudioClip swooshClip;
 
     [SerializeField] private Transform HitPosition;
 
@@ -29,6 +30,12 @@ public class Movement : MonoBehaviour
     void PlayPunch()
     {
         audioSource.PlayOneShot(punchClip);
+
+    }
+
+    void PlaySwoosh()
+    {
+        audioSource.PlayOneShot(swooshClip);
 
     }
 
@@ -59,10 +66,16 @@ public class Movement : MonoBehaviour
         {
             punch = true;
             animator.SetTrigger("Punch");
+            PlaySwoosh();
             RaycastHit2D hit = Physics2D.Raycast(HitPosition.position, - Vector2.left * transform.localScale.x, 0.5f);
             if (hit.collider != null)
             {
-                hit.collider.gameObject.SendMessage("Hit", transform.localScale.x);
+                Movement test = hit.collider.gameObject.GetComponent<Movement>();
+                if (test == null)
+                {
+                    return;
+                }
+               hit.collider.gameObject.SendMessage("Hit", transform.localScale.x);
             }
             
 
@@ -86,7 +99,6 @@ public class Movement : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().AddForce(-Vector2.left * direction * hitBackForce + Vector2.up * hitUpForce);
         PlayPunch();
-
     }
 
 }
