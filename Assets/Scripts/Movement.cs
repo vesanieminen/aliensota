@@ -91,6 +91,11 @@ public class Movement : MonoBehaviour
                     tile.Hit(new Vector2(hit.point.x - 0.01f * hit.normal.x, hit.point.y - 0.01f * hit.normal.y));
                     PlayDiggy();
                 }
+                Enemy enemy = hit.collider.gameObject.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.Die();
+                }
             }        
         }
     }
@@ -116,6 +121,11 @@ public class Movement : MonoBehaviour
                 {
                     tile.Hit(new Vector2(hit.point.x - 0.01f * hit.normal.x, hit.point.y - 0.01f * hit.normal.y));
                     PlayDiggy();
+                }
+                Enemy enemy = hit.collider.gameObject.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.Die();
                 }
             }
         }
@@ -164,6 +174,11 @@ public class Movement : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().AddForce(-Vector2.left * direction * hitBackForce + Vector2.up * upForce);
         PlayPunch();
+    }
+
+    public void Die()
+    {
+
     }
 
 }
