@@ -10,10 +10,12 @@ public class Enemy : MonoBehaviour
     public float bulletSpawnInterval = 2f;
 
     private float nextBulletSpawnTime;
+    private AudioSource audioSource;
 
     private void Start()
     {
-        nextBulletSpawnTime = Time.time + bulletSpawnInterval + Random.value * 5;
+        nextBulletSpawnTime = Time.time + bulletSpawnInterval + Random.value * bulletSpawnInterval;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -24,6 +26,10 @@ public class Enemy : MonoBehaviour
             Transform newBullet = Instantiate(bullet);
             newBullet.position = bulletSpawnPosition.position;
             newBullet.localScale = transform.localScale;
+            if (GetComponent<Renderer>().isVisible)
+            {
+                audioSource.Play();
+            }
         }
     }
 
