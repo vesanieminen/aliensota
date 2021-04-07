@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
         Movement player = collision.collider.GetComponent<Movement>();
         if (player != null)
         {
-            Destroy(player.gameObject);
+            player.Die();
         }
         Destroy(gameObject);
     }

@@ -11,11 +11,13 @@ public class Enemy : MonoBehaviour
 
     private float nextBulletSpawnTime;
     private AudioSource audioSource;
+    private Game game;
 
     private void Start()
     {
         nextBulletSpawnTime = Time.time + bulletSpawnInterval + Random.value * bulletSpawnInterval;
         audioSource = GetComponent<AudioSource>();
+        game = GameObject.Find("Game").GetComponent<Game>();
     }
 
     private void Update()
@@ -35,6 +37,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        game.EnemyDies();
         Destroy(gameObject);
     }
 

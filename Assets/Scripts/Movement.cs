@@ -25,10 +25,12 @@ public class Movement : MonoBehaviour
     private bool punch;
 
     private AudioSource audioSource;
+    private Game game;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        game = GameObject.Find("Game").GetComponent<Game>();
     }
 
     void PlayPunch()
@@ -183,7 +185,8 @@ public class Movement : MonoBehaviour
 
     public void Die()
     {
-
+        game.PlayerDies();
+        Destroy(gameObject);
     }
 
 }
