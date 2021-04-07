@@ -74,6 +74,36 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &532455026181773559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1009662930243316275}
+  m_Layer: 3
+  m_Name: HitPosition up
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1009662930243316275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532455026181773559}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.023, y: 0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7256804892310673281}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1164475418282389796
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,6 +145,7 @@ Transform:
   - {fileID: 519420032}
   - {fileID: 2703832865923285908}
   - {fileID: 1611716227835358224}
+  - {fileID: 1009662930243316275}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -232,6 +263,7 @@ MonoBehaviour:
   diggy2: {fileID: 8300000, guid: 0d699f37a5d594b65916045e65c58bf2, type: 3}
   HitPosition: {fileID: 2703832865923285908}
   HitPositionDown: {fileID: 1611716227835358224}
+  HitPositionUp: {fileID: 1009662930243316275}
 --- !u!50 &3641509723851606022
 Rigidbody2D:
   serializedVersion: 4
@@ -403,6 +435,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6d615030-acaf-4401-a676-a33db8ac8a03
     m_ActionName: Player/Diggy[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3641509723851606020}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+        m_MethodName: DigUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 66470132-91f1-41e5-abcf-5a809b603218
+    m_ActionName: Player/Diggy up[/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

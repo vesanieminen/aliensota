@@ -49,6 +49,14 @@ public class @NewControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Diggy up"",
+                    ""type"": ""Button"",
+                    ""id"": ""66470132-91f1-41e5-abcf-5a809b603218"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -95,6 +103,17 @@ public class @NewControls : IInputActionCollection, IDisposable
                     ""action"": ""Diggy"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""73525c8f-c53b-4cfa-af6a-a8ec6a1559e4"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Diggy up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -107,6 +126,7 @@ public class @NewControls : IInputActionCollection, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Punch = m_Player.FindAction("Punch", throwIfNotFound: true);
         m_Player_Diggy = m_Player.FindAction("Diggy", throwIfNotFound: true);
+        m_Player_Diggyup = m_Player.FindAction("Diggy up", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -160,6 +180,7 @@ public class @NewControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Punch;
     private readonly InputAction m_Player_Diggy;
+    private readonly InputAction m_Player_Diggyup;
     public struct PlayerActions
     {
         private @NewControls m_Wrapper;
@@ -168,6 +189,7 @@ public class @NewControls : IInputActionCollection, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Punch => m_Wrapper.m_Player_Punch;
         public InputAction @Diggy => m_Wrapper.m_Player_Diggy;
+        public InputAction @Diggyup => m_Wrapper.m_Player_Diggyup;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -189,6 +211,9 @@ public class @NewControls : IInputActionCollection, IDisposable
                 @Diggy.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggy;
                 @Diggy.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggy;
                 @Diggy.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggy;
+                @Diggyup.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggyup;
+                @Diggyup.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggyup;
+                @Diggyup.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggyup;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -205,6 +230,9 @@ public class @NewControls : IInputActionCollection, IDisposable
                 @Diggy.started += instance.OnDiggy;
                 @Diggy.performed += instance.OnDiggy;
                 @Diggy.canceled += instance.OnDiggy;
+                @Diggyup.started += instance.OnDiggyup;
+                @Diggyup.performed += instance.OnDiggyup;
+                @Diggyup.canceled += instance.OnDiggyup;
             }
         }
     }
@@ -215,5 +243,6 @@ public class @NewControls : IInputActionCollection, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnPunch(InputAction.CallbackContext context);
         void OnDiggy(InputAction.CallbackContext context);
+        void OnDiggyup(InputAction.CallbackContext context);
     }
 }
