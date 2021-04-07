@@ -11,12 +11,26 @@ public class Movement : MonoBehaviour
     public float moveSpeed = 40f;
     public float hitBackForce = 1000f;
     public float hitUpForce = 250f;
+    public AudioClip punchClip;
 
     [SerializeField] private Transform HitPosition;
 
     private float movement;
     private bool jump;
     private bool punch;
+
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    void PlayPunch()
+    {
+        audioSource.PlayOneShot(punchClip);
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -71,6 +85,8 @@ public class Movement : MonoBehaviour
     public void Hit(float direction)
     {
         GetComponent<Rigidbody2D>().AddForce(-Vector2.left * direction * hitBackForce + Vector2.up * hitUpForce);
+        PlayPunch();
+
     }
 
 }
