@@ -83,9 +83,14 @@ public class Movement : MonoBehaviour
             if (hit.collider != null)
             {
                 Movement player = hit.collider.gameObject.GetComponent<Movement>();
+                Rigidbody2D rock = hit.collider.gameObject.GetComponent<Rigidbody2D>();
                 if (player != null)
                 {
                     player.Hit(transform.localScale.x, hitUpForce);
+                }         
+                else if (rock != null) {
+                    rock.AddForce(-Vector2.left * transform.localScale.x * hitBackForce * 0.5f + Vector2.up * hitUpForce * 2);
+                    PlayPunch();
                 }
                 Tile tile = hit.collider.gameObject.GetComponent<Tile>();
                 if (tile != null)
