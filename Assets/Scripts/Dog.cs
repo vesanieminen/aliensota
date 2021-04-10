@@ -20,7 +20,7 @@ public class Dog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidbody.velocity = new Vector2(transform.localScale.x * moveSpeed, rigidbody.velocity.y);
+        rigidbody.velocity = new Vector2(Mathf.Sign(transform.localScale.x) * moveSpeed, rigidbody.velocity.y);
     }
 
     public void FlipDirection()
@@ -28,7 +28,6 @@ public class Dog : MonoBehaviour
         float oldValueX = transform.localScale.x;
         Vector2 scale = new Vector2(-transform.localScale.x, transform.localScale.y);
         transform.localScale = scale;
-        Debug.Log("Flipped: " + this + ", old value x: " + oldValueX + ", new value x: " + transform.localScale.x);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
