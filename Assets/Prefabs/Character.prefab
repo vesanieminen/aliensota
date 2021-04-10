@@ -736,6 +736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2Dlight
       objectReference: {fileID: 0}
+    - target: {fileID: 636939109861602244, guid: c779fefd629c35746b26b5f369d41c7c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8951114034281728195, guid: c779fefd629c35746b26b5f369d41c7c, type: 3}
       propertyPath: m_RootOrder
       value: 6

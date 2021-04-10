@@ -5,6 +5,9 @@ using UnityEngine;
 public class Game : MonoBehaviour
 {
 
+    public static int DEFAULT_LAYER = 0;
+    public static int DYNAMIC_LAYER = 7;
+
     public AudioClip playerDiesSound;
     public AudioClip enemyDiesSound;
     public AudioClip collectCoinSound;
