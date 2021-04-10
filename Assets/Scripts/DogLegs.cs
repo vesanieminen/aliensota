@@ -18,12 +18,6 @@ public class DogLegs : MonoBehaviour
         {
             dog.FlipDirection();
         }
-        Dog otherDog = collider.GetComponent<Dog>();
-        if (otherDog != null)
-        {
-            Debug.Log("hit another dog: " + otherDog);
-            dog.FlipDirection();
-        }
     }
 
 }

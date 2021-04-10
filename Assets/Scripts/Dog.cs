@@ -25,19 +25,20 @@ public class Dog : MonoBehaviour
 
     public void FlipDirection()
     {
+        float oldValueX = transform.localScale.x;
         Vector2 scale = new Vector2(-transform.localScale.x, transform.localScale.y);
         transform.localScale = scale;
+        Debug.Log("Flipped: " + this + ", old value x: " + oldValueX + ", new value x: " + transform.localScale.x);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Movement player = collision.collider.GetComponent<Movement>();
         Dog otherDog = collision.collider.GetComponent<Dog>();
-        /*if (otherDog != null)
+        if (otherDog != null)
         {
-            Debug.Log("hit another dog: " + otherDog);
-          //  FlipDirection();
-        }*/
+            FlipDirection();
+        }
         int layer = collision.collider.gameObject.layer;
         if (player != null)
         {
