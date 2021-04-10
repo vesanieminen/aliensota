@@ -7,6 +7,7 @@ public class Game : MonoBehaviour
 
     public AudioClip playerDiesSound;
     public AudioClip enemyDiesSound;
+    public AudioClip collectCoinSound;
 
     private AudioSource audioSource;
 
@@ -26,6 +27,11 @@ public class Game : MonoBehaviour
     public void EnemyDies()
     {
         audioSource.PlayOneShot(enemyDiesSound);
+    }
+
+    public void CollectCoin()
+    {
+        audioSource.PlayOneShot(collectCoinSound);
     }
 
 }
