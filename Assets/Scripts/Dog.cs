@@ -54,4 +54,10 @@ public class Dog : MonoBehaviour
         this.isGrounded = isGrounded;
     }
 
+    public void Kill()
+    {
+        game.EnemyDies();
+        Destroy(gameObject);
+    }
+
 }
