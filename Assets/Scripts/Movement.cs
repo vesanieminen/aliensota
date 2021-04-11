@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     public AudioClip swooshClip;
     public AudioClip diggy1;
     public AudioClip diggy2;
+    public Transform bodyPrefab;
 
     [SerializeField] private Transform HitPosition;
     [SerializeField] private Transform HitPositionDown;
@@ -26,6 +27,7 @@ public class Movement : MonoBehaviour
 
     private AudioSource audioSource;
     private Game game;
+    private bool isDead = false;
 
     private void Start()
     {
@@ -48,13 +50,6 @@ public class Movement : MonoBehaviour
     void PlayDiggy()
     {
         audioSource.PlayOneShot(Random.value > 0.5f ? diggy1 : diggy2);
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
- 
     }
 
     public void Move(InputAction.CallbackContext value)
@@ -190,8 +185,18 @@ public class Movement : MonoBehaviour
 
     public void Die()
     {
-        game.PlayerDies();
-        Destroy(gameObject);
+        if (!isDead) {
+            game.PlayerDies();
+            Transform body = Instantiate(bodyPrefab);
+            body.position = transform.position;
+            isDead = true;
+            Destroy(gameObject);
+        }
+    }
+
+    private void TurnOffPhysicsAndRenderer()
+    {
+
     }
 
 }

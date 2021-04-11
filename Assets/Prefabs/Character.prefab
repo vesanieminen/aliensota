@@ -296,6 +296,7 @@ MonoBehaviour:
   swooshClip: {fileID: 8300000, guid: ee9de43777d184a9b9281a78a68ece6b, type: 3}
   diggy1: {fileID: 8300000, guid: 6295a3b808d9b4fcc9daaa4c76b52a74, type: 3}
   diggy2: {fileID: 8300000, guid: 0d699f37a5d594b65916045e65c58bf2, type: 3}
+  bodyPrefab: {fileID: 9155806233591037065, guid: cd4f57ee3723965438a671a07b02c257, type: 3}
   HitPosition: {fileID: 2703832865923285908}
   HitPositionDown: {fileID: 1611716227835358224}
   HitPositionUp: {fileID: 1009662930243316275}
