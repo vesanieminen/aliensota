@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     public AudioClip diggy1;
     public AudioClip diggy2;
     public Transform bodyPrefab;
+    public Canvas canvas;
 
     [SerializeField] private Transform HitPosition;
     [SerializeField] private Transform HitPositionDown;
@@ -43,6 +44,7 @@ public class Movement : MonoBehaviour
         circleCollider = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spawnLocation = transform.position;
+        canvas.enabled = false;
     }
 
     void PlayPunch()
@@ -235,6 +237,7 @@ public class Movement : MonoBehaviour
         rigidbody.isKinematic = true;
         rigidbody.velocity = Vector3.zero;
         spriteRenderer.enabled = false;
+        canvas.enabled = true;
     }
 
     private void TurnOnPhysicsAndRenderer()
@@ -243,6 +246,7 @@ public class Movement : MonoBehaviour
         circleCollider.enabled = true;
         rigidbody.isKinematic = false;
         spriteRenderer.enabled = true;
+        canvas.enabled = false;
     }
 
     public void Respawn()
