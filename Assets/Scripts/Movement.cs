@@ -26,13 +26,23 @@ public class Movement : MonoBehaviour
     private bool punch;
 
     private AudioSource audioSource;
+    private Rigidbody2D rigidbody;
+    private BoxCollider2D boxCollider;
+    private CircleCollider2D circleCollider;
+    private SpriteRenderer spriteRenderer;
     private Game game;
+    private Vector3 spawnLocation;
     private bool isDead = false;
 
-    private void Start()
+    void Start()
     {
         audioSource = GetComponent<AudioSource>();
         game = GameObject.Find("Game").GetComponent<Game>();
+        rigidbody = GetComponent<Rigidbody2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        circleCollider = GetComponent<CircleCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spawnLocation = transform.position;
     }
 
     void PlayPunch()
@@ -54,11 +64,19 @@ public class Movement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext value)
     {
+        if (isDead)
+        {
+            return;
+        }
         movement = value.ReadValue<float>() * moveSpeed;
     }
 
     public void Jump(InputAction.CallbackContext value)
     {
+        if (isDead)
+        {
+            Respawn();
+        }
         if (!jump)
         {
             jump = true;
@@ -68,6 +86,10 @@ public class Movement : MonoBehaviour
 
     public void Punch(InputAction.CallbackContext value)
     {
+        if (isDead)
+        {
+            return;
+        }
         float inputValue = value.ReadValue<float>();
         if (inputValue == 1 && !punch)
         {
@@ -104,6 +126,10 @@ public class Movement : MonoBehaviour
 
     public void Dig(InputAction.CallbackContext value)
     {
+        if (isDead)
+        {
+            return;
+        }
         float inputValue = value.ReadValue<float>();
         if (inputValue == 1 && !punch)
         {
@@ -135,6 +161,10 @@ public class Movement : MonoBehaviour
 
     public void DigUp(InputAction.CallbackContext value)
     {
+        if (isDead)
+        {
+            return;
+        }
         float inputValue = value.ReadValue<float>();
         if (inputValue == 1 && !punch)
         {
@@ -166,6 +196,10 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDead)
+        {
+            return;
+        }
         controller.Move(movement * Time.fixedDeltaTime, false, jump);
         animator.SetFloat("Speed", Mathf.Abs(movement));
         jump = false;
@@ -190,13 +224,32 @@ public class Movement : MonoBehaviour
             Transform body = Instantiate(bodyPrefab);
             body.position = transform.position;
             isDead = true;
-            Destroy(gameObject);
+            TurnOffPhysicsAndRenderer();
         }
     }
 
     private void TurnOffPhysicsAndRenderer()
     {
+        boxCollider.enabled = false;
+        circleCollider.enabled = false;
+        rigidbody.isKinematic = true;
+        rigidbody.velocity = Vector3.zero;
+        spriteRenderer.enabled = false;
+    }
 
+    private void TurnOnPhysicsAndRenderer()
+    {
+        boxCollider.enabled = true;
+        circleCollider.enabled = true;
+        rigidbody.isKinematic = false;
+        spriteRenderer.enabled = true;
+    }
+
+    public void Respawn()
+    {
+        isDead = false;
+        transform.position = spawnLocation;
+        TurnOnPhysicsAndRenderer();
     }
 
 }
