@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class Game : MonoBehaviour
 
     private AudioSource audioSource;
     private GameObject startLocation;
+    private bool isGameFinished = false;
 
     void Awake()
     {
@@ -25,6 +28,12 @@ public class Game : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         startLocation = GameObject.FindGameObjectWithTag("Start Location");
     }
+
+    public void Finished()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 
     private void Start()
     {
