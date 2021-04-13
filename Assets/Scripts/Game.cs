@@ -11,6 +11,7 @@ public class Game : MonoBehaviour
     public AudioClip playerDiesSound;
     public AudioClip enemyDiesSound;
     public AudioClip collectCoinSound;
+    public GameObject uiCamera;
 
     private AudioSource audioSource;
 
@@ -20,6 +21,11 @@ public class Game : MonoBehaviour
             Application.runInBackground = true;
 
         audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+        uiCamera.SetActive(true);
     }
 
     public void PlayerDies()

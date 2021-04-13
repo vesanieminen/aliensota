@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 259231713}
   - component: {fileID: 259231715}
   - component: {fileID: 259231714}
-  - component: {fileID: 259231716}
   - component: {fileID: 259231717}
   m_Layer: 5
   m_Name: Start text
@@ -36,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -220.4}
+  m_AnchoredPosition: {x: 0, y: -260}
   m_SizeDelta: {x: 1280, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &259231715
@@ -70,7 +69,7 @@ MonoBehaviour:
   m_text: Press Space To Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -94,13 +93,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 91.94
+  m_fontSize: 72
   m_fontSizeBase: 91.94
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 9
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -136,20 +135,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &259231716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259231712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9144a22a8ef848842b43822f9aa177ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeStartTime: 5
-  fadeTime: 1
 --- !u!95 &259231717
 Animator:
   serializedVersion: 3
@@ -276,7 +261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3347091869204948480
 Transform:
   m_ObjectHideFlags: 0
@@ -817,3 +802,4 @@ MonoBehaviour:
   playerDiesSound: {fileID: 8300000, guid: 7221f4aa6a7aab344b3d9fa09f93f1e8, type: 3}
   enemyDiesSound: {fileID: 8300000, guid: 639f51140eabe954fb4388dfece78b22, type: 3}
   collectCoinSound: {fileID: 8300000, guid: 314e3974d56a4354f82ac0cc21b58a02, type: 3}
+  uiCamera: {fileID: 3347091869204948484}
