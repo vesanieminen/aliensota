@@ -115,6 +115,17 @@
                 },
                 {
                     "name": "",
+                    "id": "083ede86-1bfc-4612-990c-e2dcc9ce553b",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7b81c8bd-99de-4499-b2a6-e86633f5b968",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -200,6 +211,17 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Touch",
+            "bindingGroup": "Touch",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
                     "isOptional": true,
                     "isOR": false
                 }

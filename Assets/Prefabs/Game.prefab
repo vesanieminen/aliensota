@@ -665,7 +665,7 @@ MonoBehaviour:
       m_SingletonActionBindings:
       - m_Name: 
         m_Id: c749e1d0-ce1b-4240-ab10-2607a82ad06e
-        m_Path: <Gamepad>/start
+        m_Path: <Gamepad>/buttonSouth
         m_Interactions: 
         m_Processors: 
         m_Groups: 
@@ -674,6 +674,14 @@ MonoBehaviour:
       - m_Name: 
         m_Id: 34c363eb-b82e-4878-9e89-e6f45a53f8b8
         m_Path: <Keyboard>/space
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+      - m_Name: 
+        m_Id: e1a393bb-a1b1-47bb-9185-a34bfce2c388
+        m_Path: <Touchscreen>/primaryTouch/tap
         m_Interactions: 
         m_Processors: 
         m_Groups: 
