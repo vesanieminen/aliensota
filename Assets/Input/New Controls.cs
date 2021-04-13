@@ -23,7 +23,7 @@ public class @NewControls : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""ae9e3e8b-e0e2-405f-86ca-2430c4d5f2db"",
                     ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
+                    ""processors"": ""Clamp(min=-1,max=1)"",
                     ""interactions"": """"
                 },
                 {
@@ -106,6 +106,17 @@ public class @NewControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""33e86e56-0251-4f19-b177-216802f0a551"",
+                    ""path"": ""<Touchscreen>/delta/x"",
+                    ""interactions"": """",
+                    ""processors"": ""Clamp(min=-1,max=1)"",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""11590e4e-4d37-4647-87b0-9eaef061ceb0"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
@@ -161,6 +172,17 @@ public class @NewControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""ecff20c5-0200-40b8-a2cd-098f4f71ea10"",
+                    ""path"": ""<Touchscreen>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Punch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""da9b01d8-c7f3-4fcb-9635-6daf14af6cc7"",
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
@@ -183,6 +205,17 @@ public class @NewControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""10d74985-b9dd-4e6b-b1c0-cd654e986f2b"",
+                    ""path"": ""<Touchscreen>/touch1/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Diggy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""73525c8f-c53b-4cfa-af6a-a8ec6a1559e4"",
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
@@ -199,6 +232,17 @@ public class @NewControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
+                    ""action"": ""Diggy up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76d92f69-cd7f-4625-bc71-7dc2e7f26de9"",
+                    ""path"": ""<Touchscreen>/touch2/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
                     ""action"": ""Diggy up"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
