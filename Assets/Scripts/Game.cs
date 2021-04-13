@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Game : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Game : MonoBehaviour
     public GameObject uiCamera;
 
     private AudioSource audioSource;
+    private GameObject startLocation;
 
     void Awake()
     {
@@ -21,6 +23,7 @@ public class Game : MonoBehaviour
             Application.runInBackground = true;
 
         audioSource = GetComponent<AudioSource>();
+        startLocation = GameObject.FindGameObjectWithTag("Start Location");
     }
 
     private void Start()
@@ -41,6 +44,15 @@ public class Game : MonoBehaviour
     public void CollectCoin()
     {
         audioSource.PlayOneShot(collectCoinSound);
+    }
+
+    private void OnPlayerJoined(PlayerInput playerInput)
+    {
+        if (startLocation != null)
+        {
+            playerInput.transform.position = startLocation.transform.position;
+        }
+    
     }
 
 }
