@@ -38,6 +38,7 @@ public class Game : MonoBehaviour
     private void Start()
     {
         uiCamera.SetActive(true);
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlayerDies()
@@ -61,6 +62,7 @@ public class Game : MonoBehaviour
         {
             playerInput.transform.position = startLocation.transform.position;
         }
+        
     
     }
 

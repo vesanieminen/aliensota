@@ -45,6 +45,9 @@ public class Movement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         spawnLocation = transform.position;
         canvas.enabled = false;
+
+        EnableMenuMode();
+        spriteRenderer.enabled = false;
     }
 
     void PlayPunch()
@@ -254,6 +257,37 @@ public class Movement : MonoBehaviour
         isDead = false;
         transform.position = spawnLocation;
         TurnOnPhysicsAndRenderer();
+    }
+
+    public void EnableGameMode()
+    {
+        foreach (var component in GetComponents<Behaviour>())
+        {
+            component.enabled = true;
+        }
+        TurnOnPhysicsAndRenderer();
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+    }
+
+    public void EnableMenuMode()
+    {
+        foreach (var component in GetComponents<Behaviour>())
+        {
+            if (component.GetType() == typeof(PlayerInput))
+            {
+                continue;
+            }
+            component.enabled = false;
+        }
+        rigidbody.isKinematic = true;
+        rigidbody.velocity = Vector3.zero;
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(false);
+        }
     }
 
 }
