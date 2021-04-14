@@ -265,11 +265,11 @@ public class Movement : MonoBehaviour
         {
             component.enabled = true;
         }
-        TurnOnPhysicsAndRenderer();
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(true);
         }
+        TurnOnPhysicsAndRenderer();
     }
 
     public void EnableMenuMode()

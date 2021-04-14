@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3ec2f38f9b8d98442a9c7b8dbcc4305e
+  - enabled: 1
     path: Assets/Scenes/Miko2.unity
     guid: 78eaa813e69eed84590efd6232d006b4
   m_configObjects: {}

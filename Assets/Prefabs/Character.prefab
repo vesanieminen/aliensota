@@ -685,9 +685,33 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 66470132-91f1-41e5-abcf-5a809b603218
     m_ActionName: Player/Diggy up[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a79a4e62-9af4-45bb-b8a1-e120e294324d
+    m_ActionName: Menu/Select[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a2a59772-5fc7-4297-9e9f-cb28c0ec6552
+    m_ActionName: Menu/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3f2b40a9-6f74-4e4d-9ff9-539fdde69f64
+    m_ActionName: Menu/Cancel[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Menu
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 519420031}
 --- !u!82 &6162649236514163030
