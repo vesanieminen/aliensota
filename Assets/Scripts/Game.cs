@@ -96,8 +96,8 @@ public class Game : MonoBehaviour
     {
         foreach (var playerInput in playerInputs)
         {
-            playerInput.GetComponent<Movement>().EnableMenuMode();
             playerInput.SwitchCurrentActionMap(ACTION_MAP_MENU);
+            playerInput.GetComponent<Movement>().EnableMenuMode();
         }
     }
 

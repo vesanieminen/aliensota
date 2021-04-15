@@ -78,14 +78,17 @@ public class Movement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext value)
     {
-        if (isDead)
+        if (value.performed)
         {
-            Respawn();
-        }
-        if (!jump)
-        {
-            jump = true;
-            animator.SetBool("Jump", jump);
+            if (isDead)
+            {
+                Respawn();
+            }
+            if (!jump)
+            {
+                jump = true;
+                animator.SetBool("Jump", jump);
+            }
         }
     }
 
@@ -274,8 +277,6 @@ public class Movement : MonoBehaviour
 
     public void EnableMenuMode()
     {
-        rigidbody.isKinematic = true;
-        rigidbody.velocity = Vector3.zero;
         foreach (var component in GetComponents<Behaviour>())
         {
             if (component.GetType() == typeof(PlayerInput))
@@ -284,6 +285,8 @@ public class Movement : MonoBehaviour
             }
             component.enabled = false;
         }
+        rigidbody.isKinematic = true;
+        rigidbody.velocity = Vector3.zero;
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(false);
@@ -292,7 +295,10 @@ public class Movement : MonoBehaviour
 
     public void MenuButtonPressed(InputAction.CallbackContext value)
     {
-       game.BackToMenu();
+        if (value.performed)
+        {
+            game.BackToMenu();
+        }
     }
 
 }

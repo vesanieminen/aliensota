@@ -294,7 +294,7 @@ public class @NewControls : IInputActionCollection, IDisposable
                     ""id"": ""3f2b40a9-6f74-4e4d-9ff9-539fdde69f64"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
