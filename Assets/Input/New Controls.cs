@@ -57,6 +57,14 @@ public class @NewControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""f3ba2a7a-081f-4a91-a9a5-038e4860d42a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -244,6 +252,17 @@ public class @NewControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Touch"",
                     ""action"": ""Diggy up"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""38792e44-5c17-45c7-b5d3-c52357afaa05"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -479,6 +498,7 @@ public class @NewControls : IInputActionCollection, IDisposable
         m_Player_Punch = m_Player.FindAction("Punch", throwIfNotFound: true);
         m_Player_Diggy = m_Player.FindAction("Diggy", throwIfNotFound: true);
         m_Player_Diggyup = m_Player.FindAction("Diggy up", throwIfNotFound: true);
+        m_Player_Menu = m_Player.FindAction("Menu", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Submit = m_Menu.FindAction("Submit", throwIfNotFound: true);
@@ -538,6 +558,7 @@ public class @NewControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Punch;
     private readonly InputAction m_Player_Diggy;
     private readonly InputAction m_Player_Diggyup;
+    private readonly InputAction m_Player_Menu;
     public struct PlayerActions
     {
         private @NewControls m_Wrapper;
@@ -547,6 +568,7 @@ public class @NewControls : IInputActionCollection, IDisposable
         public InputAction @Punch => m_Wrapper.m_Player_Punch;
         public InputAction @Diggy => m_Wrapper.m_Player_Diggy;
         public InputAction @Diggyup => m_Wrapper.m_Player_Diggyup;
+        public InputAction @Menu => m_Wrapper.m_Player_Menu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -571,6 +593,9 @@ public class @NewControls : IInputActionCollection, IDisposable
                 @Diggyup.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggyup;
                 @Diggyup.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggyup;
                 @Diggyup.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDiggyup;
+                @Menu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
+                @Menu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
+                @Menu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -590,6 +615,9 @@ public class @NewControls : IInputActionCollection, IDisposable
                 @Diggyup.started += instance.OnDiggyup;
                 @Diggyup.performed += instance.OnDiggyup;
                 @Diggyup.canceled += instance.OnDiggyup;
+                @Menu.started += instance.OnMenu;
+                @Menu.performed += instance.OnMenu;
+                @Menu.canceled += instance.OnMenu;
             }
         }
     }
@@ -677,6 +705,7 @@ public class @NewControls : IInputActionCollection, IDisposable
         void OnPunch(InputAction.CallbackContext context);
         void OnDiggy(InputAction.CallbackContext context);
         void OnDiggyup(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {

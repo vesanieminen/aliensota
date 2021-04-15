@@ -92,4 +92,13 @@ public class Game : MonoBehaviour
         Application.Quit();
     }
 
+    public void BackToMenu()
+    {
+        foreach (var playerInput in playerInputs)
+        {
+            playerInput.GetComponent<Movement>().EnableMenuMode();
+            playerInput.SwitchCurrentActionMap(ACTION_MAP_MENU);
+        }
+    }
+
 }

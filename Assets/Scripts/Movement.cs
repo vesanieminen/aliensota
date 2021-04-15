@@ -274,6 +274,8 @@ public class Movement : MonoBehaviour
 
     public void EnableMenuMode()
     {
+        rigidbody.isKinematic = true;
+        rigidbody.velocity = Vector3.zero;
         foreach (var component in GetComponents<Behaviour>())
         {
             if (component.GetType() == typeof(PlayerInput))
@@ -282,12 +284,15 @@ public class Movement : MonoBehaviour
             }
             component.enabled = false;
         }
-        rigidbody.isKinematic = true;
-        rigidbody.velocity = Vector3.zero;
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(false);
         }
+    }
+
+    public void MenuButtonPressed(InputAction.CallbackContext value)
+    {
+       game.BackToMenu();
     }
 
 }
