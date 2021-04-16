@@ -128,10 +128,13 @@ public class Movement : MonoBehaviour
                 {
                     enemy.Die();
                 }
-                Dog dog = hit.collider.gameObject.GetComponent<Dog>();
-                if (dog != null)
+                if (hit.collider.transform.parent != null)
                 {
-                    dog.Kill();
+                    Dog dog = hit.collider.transform.parent.GetComponent<Dog>();
+                    if (dog != null)
+                    {
+                        dog.Kill();
+                    }
                 }
             }        
         }
@@ -168,11 +171,13 @@ public class Movement : MonoBehaviour
                 {
                     enemy.Die();
                 }
-                Dog dog = hit.collider.gameObject.GetComponent<Dog>();
-                if (dog != null)
+                if (hit.collider.transform.parent != null)
                 {
-                    Debug.Log("Kill dog!");
-                    dog.Kill();
+                    Dog dog = hit.collider.transform.parent.GetComponent<Dog>();
+                    if (dog != null)
+                    {
+                        dog.Kill();
+                    }
                 }
             }
         }
@@ -209,10 +214,13 @@ public class Movement : MonoBehaviour
                 {
                     enemy.Die();
                 }
-                Dog dog = hit.collider.gameObject.GetComponent<Dog>();
-                if (dog != null)
+                if (hit.collider.transform.parent != null)
                 {
-                    dog.Kill();
+                    Dog dog = hit.collider.transform.parent.GetComponent<Dog>();
+                    if (dog != null)
+                    {
+                        dog.Kill();
+                    }
                 }
             }
         }
