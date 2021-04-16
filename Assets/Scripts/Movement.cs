@@ -128,6 +128,11 @@ public class Movement : MonoBehaviour
                 {
                     enemy.Die();
                 }
+                Dog dog = hit.collider.gameObject.GetComponent<Dog>();
+                if (dog != null)
+                {
+                    dog.Kill();
+                }
             }        
         }
     }
@@ -163,6 +168,12 @@ public class Movement : MonoBehaviour
                 {
                     enemy.Die();
                 }
+                Dog dog = hit.collider.gameObject.GetComponent<Dog>();
+                if (dog != null)
+                {
+                    Debug.Log("Kill dog!");
+                    dog.Kill();
+                }
             }
         }
     }
@@ -197,6 +208,11 @@ public class Movement : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.Die();
+                }
+                Dog dog = hit.collider.gameObject.GetComponent<Dog>();
+                if (dog != null)
+                {
+                    dog.Kill();
                 }
             }
         }

@@ -36,7 +36,7 @@ public class Game : MonoBehaviour
 
     public void Finished()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        BackToMenu();
     }
 
 
