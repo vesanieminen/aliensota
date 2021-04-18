@@ -25,7 +25,7 @@ public class EndStateCheck : MonoBehaviour
             }
         }
         if (aliveGameObjects == 0) {
-            game.Finished();
+            game.NextLevel();
         }
     }
 }

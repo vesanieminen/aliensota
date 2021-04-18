@@ -34,7 +34,7 @@ public class Game : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void Finished()
+    public void NextLevel()
     {
         BackToMenu();
     }
@@ -74,17 +74,22 @@ public class Game : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
-        GameObject startLocation = GameObject.FindGameObjectWithTag("Start Location");
-        foreach (var playerInput in playerInputs)
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
+        //asyncLoad.allowSceneActivation = false;
+        asyncLoad.completed += (asyncOperation) =>
         {
-            if (startLocation != null)
+            GameObject startLocation = GameObject.FindGameObjectWithTag("Start Location");
+            foreach (var playerInput in playerInputs)
             {
-                playerInput.transform.position = startLocation.transform.position;
+                if (startLocation != null)
+                {
+                    playerInput.transform.position = startLocation.transform.position;
+                    playerInput.GetComponent<Movement>().SetSpawnLocation(startLocation.transform.position);
+                }
+                playerInput.GetComponent<Movement>().EnableGameMode();
+                playerInput.SwitchCurrentActionMap(ACTION_MAP_PLAYER);
             }
-            playerInput.GetComponent<Movement>().EnableGameMode();
-            playerInput.SwitchCurrentActionMap(ACTION_MAP_PLAYER);
-        }
+        };
     }
 
     public void Quit()

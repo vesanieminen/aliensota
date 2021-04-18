@@ -50,6 +50,11 @@ public class Movement : MonoBehaviour
         spriteRenderer.enabled = false;
     }
 
+    public void SetSpawnLocation(Vector3 position)
+    {
+        spawnLocation = position;
+    }
+
     void PlayPunch()
     {
         audioSource.PlayOneShot(punchClip);

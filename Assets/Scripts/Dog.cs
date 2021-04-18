@@ -13,8 +13,8 @@ public class Dog : MonoBehaviour
 
     private void Start()
     {
-        game = GameObject.Find("Game").GetComponent<Game>();
         rigidbody = GetComponent<Rigidbody2D>();
+        game = GameObject.Find("Game").GetComponent<Game>();
     }
 
     // Update is called once per frame
