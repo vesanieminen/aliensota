@@ -36,9 +36,17 @@ public class Game : MonoBehaviour
 
     public void NextLevel()
     {
-        BackToMenu();
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("current level: " + currentLevel + ", sceneCount: " + SceneManager.sceneCountInBuildSettings);
+        if (currentLevel + 1 < SceneManager.sceneCountInBuildSettings)
+        {
+            LoadLevel(currentLevel + 1);
+        }
+        else
+        {
+            BackToMenu();
+        }
     }
-
 
     private void Start()
     {
@@ -74,7 +82,12 @@ public class Game : MonoBehaviour
 
     public void StartGame()
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
+        LoadLevel(1);
+    }
+
+    public void LoadLevel(int levelId)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelId);
         //asyncLoad.allowSceneActivation = false;
         asyncLoad.completed += (asyncOperation) =>
         {
