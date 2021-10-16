@@ -147,7 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7256804892310673281}
   m_Layer: 3
-  m_Name: Character
+  m_Name: T-REX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -368,7 +368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3567259409441556996}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0, z: 0}
+  m_LocalPosition: {x: -0.292, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3641509722852229842}
@@ -421,7 +421,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ddd5f6e331bba4d809f209f96b35d9d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 40b7233145e0fdb42b0ed82b4ea218be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -493,7 +493,7 @@ MonoBehaviour:
   swooshClip: {fileID: 8300000, guid: ee9de43777d184a9b9281a78a68ece6b, type: 3}
   diggy1: {fileID: 8300000, guid: 6295a3b808d9b4fcc9daaa4c76b52a74, type: 3}
   diggy2: {fileID: 8300000, guid: 0d699f37a5d594b65916045e65c58bf2, type: 3}
-  bodyPrefab: {fileID: 9155806233591037065, guid: cd4f57ee3723965438a671a07b02c257, type: 3}
+  bodyPrefab: {fileID: 9155806233591037065, guid: 30a69f0692f80e2429c8acb2a0d2e53c, type: 3}
   canvas: {fileID: 315361521410488089}
   HitPosition: {fileID: 2703832865923285908}
   HitPositionDown: {fileID: 1611716227835358224}
@@ -571,7 +571,7 @@ Animator:
   m_GameObject: {fileID: 3567259409441556996}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9d88693455428eb468b51034912453ff, type: 2}
+  m_Controller: {fileID: 9100000, guid: 143cfd001bc53134baa6118de6f9de92, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

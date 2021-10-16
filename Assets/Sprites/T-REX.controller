@@ -54,7 +54,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mako seisoo
+  m_Name: T-REX seisoo
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -68,7 +68,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: bc08712c9f5604248a15be09280ac32b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 37c3228df0496404cb7454d6fe87b189, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -232,7 +232,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "Mako k\xE4velee"
+  m_Name: "T-REX k\xE4velee"
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -246,7 +246,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1b7ff7a51d5069847931fc5700c283a9, type: 2}
+  m_Motion: {fileID: 7400000, guid: cb616919d94e8864fb716f8e230c604e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -312,7 +312,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "Mako hypp\xE4\xE4"
+  m_Name: "T-REX hypp\xE4\xE4"
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -327,7 +327,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: acca4a037d0f6b84e9f136e6201cfde0, type: 2}
+  m_Motion: {fileID: 7400000, guid: 22b7c329f49a6c74dae9f55719180042, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -340,7 +340,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "Mako ly\xF6"
+  m_Name: "T-REX ly\xF6"
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -354,7 +354,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6674fd500b30a354399e4afbf454d1b4, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0753a6c5ab89f014fbd330ad532845b6, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
