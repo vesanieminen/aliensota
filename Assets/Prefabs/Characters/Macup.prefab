@@ -514,13 +514,13 @@ MonoBehaviour:
   controller: {fileID: 1378456068430246695}
   animator: {fileID: 2425328798310571394}
   moveSpeed: 75
-  hitBackForce: 2000
-  hitUpForce: 150
+  hitBackForce: 4000
+  hitUpForce: 550
   punchClip: {fileID: 8300000, guid: 53d714ebe3f834d45a5ce462de3202db, type: 3}
   swooshClip: {fileID: 8300000, guid: ee9de43777d184a9b9281a78a68ece6b, type: 3}
   diggy1: {fileID: 8300000, guid: 6295a3b808d9b4fcc9daaa4c76b52a74, type: 3}
   diggy2: {fileID: 8300000, guid: 0d699f37a5d594b65916045e65c58bf2, type: 3}
-  bodyPrefab: {fileID: 9155806233591037065, guid: cd4f57ee3723965438a671a07b02c257, type: 3}
+  bodyPrefab: {fileID: 9155806233591037065, guid: 5469a5008bab2a84b989489840a5e3e6, type: 3}
   canvas: {fileID: 315361521410488089}
   HitPosition: {fileID: 2703832865923285908}
   HitPositionDown: {fileID: 1611716227835358224}

@@ -9,8 +9,23 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3ec2f38f9b8d98442a9c7b8dbcc4305e
   - enabled: 0
+    path: Assets/Scenes/Tilemap.unity
+    guid: 2cbb8da058cbd5d46bbac01abcc0fcc5
+  - enabled: 1
+    path: Assets/Scenes/Mikon oma.unity
+    guid: b686a7af3cf34ca4ea70de0e481741ba
+  - enabled: 0
+    path: "Assets/Scenes/Kentt\xE42.unity"
+    guid: d7dc05025d0cf4e428ed9076ddffab9a
+  - enabled: 1
+    path: Assets/Scenes/Remi 2.unity
+    guid: 46064648d3e3e0b429284acfc19e4b05
+  - enabled: 0
     path: Assets/Scenes/Miko1.unity
     guid: f2e9eac4caeaa5749a27c42c99da22d8
+  - enabled: 0
+    path: Assets/Scenes/Remi.unity
+    guid: fdb8ae2897c54b041ab3814613426d41
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: e5e0c03518c6be34db866d8d369e6a32
