@@ -11,7 +11,8 @@
                     "id": "ae9e3e8b-e0e2-405f-86ca-2430c4d5f2db",
                     "expectedControlType": "Axis",
                     "processors": "Clamp(min=-1,max=1)",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Jump",
@@ -19,7 +20,8 @@
                     "id": "7dc09d50-1b64-4c8b-8426-6bed2bec3ce5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Punch",
@@ -27,7 +29,8 @@
                     "id": "6795b132-da99-4332-9506-4d1920f35f98",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Diggy",
@@ -35,7 +38,8 @@
                     "id": "6d615030-acaf-4401-a676-a33db8ac8a03",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Diggy up",
@@ -43,7 +47,8 @@
                     "id": "66470132-91f1-41e5-abcf-5a809b603218",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Menu",
@@ -51,7 +56,17 @@
                     "id": "f3ba2a7a-081f-4a91-a9a5-038e4860d42a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Respawn",
+                    "type": "Button",
+                    "id": "6092e377-4cc9-4773-a988-d033ab186477",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -263,6 +278,28 @@
                     "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "85a7d871-d79e-47d5-a792-5c57826ce9a6",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Respawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "359b7319-c081-41b2-89bb-3ba001471cf5",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Respawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -276,7 +313,8 @@
                     "id": "a79a4e62-9af4-45bb-b8a1-e120e294324d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Move",
@@ -284,7 +322,8 @@
                     "id": "a2a59772-5fc7-4297-9e9f-cb28c0ec6552",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Cancel",
@@ -292,7 +331,8 @@
                     "id": "3f2b40a9-6f74-4e4d-9ff9-539fdde69f64",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [

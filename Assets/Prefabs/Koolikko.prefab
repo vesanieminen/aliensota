@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7843664470504045403}
   - component: {fileID: -5149866246859185668}
   m_Layer: 6
-  m_Name: Coin
+  m_Name: Koolikko
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

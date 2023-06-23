@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Tilemap.unity
     guid: 2cbb8da058cbd5d46bbac01abcc0fcc5
   - enabled: 1
+    path: Assets/Scenes/Remi 3.unity
+    guid: a5c4d9cfd107f524580dfea3288ed54b
+  - enabled: 1
     path: Assets/Scenes/Mikon oma.unity
     guid: b686a7af3cf34ca4ea70de0e481741ba
   - enabled: 0
     path: "Assets/Scenes/Kentt\xE42.unity"
     guid: d7dc05025d0cf4e428ed9076ddffab9a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Remi 2.unity
     guid: 46064648d3e3e0b429284acfc19e4b05
   - enabled: 0

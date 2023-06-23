@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 2367252632273708718}
   - component: {fileID: 8677472663246817817}
   m_Layer: 9
-  m_Name: Dog enemy
+  m_Name: Koira
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -53002259645372392}
   - component: {fileID: -5982943855431387589}
   m_Layer: 7
-  m_Name: Stone
+  m_Name: Kiva kivi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
